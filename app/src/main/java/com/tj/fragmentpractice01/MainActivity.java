@@ -34,6 +34,16 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 // 버튼이 눌렸을때 하고 싶은
                 //1. 지금보여주고 있는 Fragment 에 접근
+
+              Fragment cuurentFrag  =   pagerAdapter.getItem(act.viewPager.getCurrentItem());
+
+              if(act.viewPager.getCurrentItem() == 0){
+                  //currentFrag 가 FragmentOne 이다!
+              }else if(act.viewPager.getCurrentItem() == 1){
+                  //currentFrag 가 FragmentTwo 이다!
+              }else if(act.viewPager.getCurrentItem() == 2){
+                  //currentFrag 가 FragmentThree 이다!
+              }
                 // = > g현재 작성중인  MainActivity 에서 ?
                 //2. 접근한 Fragment 에서 어떻게 작업을 시킬건지 ?
             }
