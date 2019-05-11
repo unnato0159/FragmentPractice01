@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.tj.fragmentpractice01.adapters.PagerAdapter;
 import com.tj.fragmentpractice01.databinding.ActivityMainBinding;
+import com.tj.fragmentpractice01.fragments.FragmentOne;
 import com.tj.fragmentpractice01.fragments.FragmentTwo;
 
 public class MainActivity extends BaseActivity {
@@ -32,13 +33,17 @@ public class MainActivity extends BaseActivity {
         act.okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 버튼이 눌렸을때 하고 싶은
+                // 버튼이 눌렸을때 하고 싶은K
                 //1. 지금보여주고 있는 Fragment 에 접근
 
               Fragment cuurentFrag  =   pagerAdapter.getItem(act.viewPager.getCurrentItem());
 
               if(act.viewPager.getCurrentItem() == 0){
                   //currentFrag 가 FragmentOne 이다!
+
+                  ((FragmentOne) cuurentFrag).changeTextMsg(act.testEdt.getText().toString());
+
+
               }else if(act.viewPager.getCurrentItem() == 1){
                   //currentFrag 가 FragmentTwo 이다!
               }else if(act.viewPager.getCurrentItem() == 2){
